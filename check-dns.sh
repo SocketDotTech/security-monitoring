@@ -2,7 +2,7 @@
 
 cd /tmp
 
-if [ -e /tmp/hashold_$1 ]
+if [ -e /tmp/dnsold_$1 ]
 then
     host $1 | grep address | awk '{print $NF}' | sort | uniq | xargs echo > /tmp/dnsnew_$1
 
