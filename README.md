@@ -1,23 +1,9 @@
 # Scripts for monitoring infra
 
-## DNS Monitoring
-### Setup
-```bash
-export MACHINE_NAME="Mumbai Guard"
-export DISCORD_WEBHOOK="https://discord.com/api/webhooks/123/w3bh00k_t0k3n"
-./init-dns-check.sh "bungee.exchange"
-```
+### DNS Monitoring
 
-### Start
-Start cron for `check-dns.sh "bungee.exchange"`
+Start cron for `MACHINE_NAME="Mumbai Guard" DISCORD_WEBHOOK="https://discord.com/api/webhooks/123/w3bh00k_t0k3n" check-dns.sh "bungee.exchange"`
 
-## Website Monitoring
-### Setup
-```bash
-export MACHINE_NAME="Mumbai Guard"
-export DISCORD_WEBHOOK="https://discord.com/api/webhooks/123/w3bh00k_t0k3n"
-./init-website-check.sh "bungee.exchange"
-```
+### Website Monitoring
 
-### Start
-Start cron for `check-website.sh "bungee.exchange"`
+Start cron for `MACHINE_NAME="Mumbai Guard" DISCORD_WEBHOOK="https://discord.com/api/webhooks/123/w3bh00k_t0k3n" check-website.sh "bungee.exchange"`
