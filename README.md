@@ -1,9 +1,23 @@
-# Scripts for monitoring infra
+# Security monitoring scripts
 
-### DNS Monitoring
+This repo contains scripts to monitor Socket systems and detect if they can be accessed as intended. Started with scripts to monitor website content hashes and DNS resolutions. It is recomended to setup a cron for these sctipts in multiple regions. Each cron will get data and store in `/tmp/` folder. Values are then compared when cron is triggered next time. Notifications are sent on discord when a change is detected for these. More script will be added with need.
 
-Start cron for `MACHINE_NAME="Mumbai Guard" DISCORD_WEBHOOK="https://discord.com/api/webhooks/123/w3bh00k_t0k3n" check-dns.sh "bungee.exchange"`
+### Setup crons
 
-### Website Monitoring
+Open an editor to edit cron tasks.
 
-Start cron for `MACHINE_NAME="Mumbai Guard" DISCORD_WEBHOOK="https://discord.com/api/webhooks/123/w3bh00k_t0k3n" check-website.sh "bungee.exchange"`
+```bash
+crontab -e
+```
+
+### DNS Monitoring Cron
+
+```bash!
+* * * * * MACHINE_NAME="<discord_bot_name>" DISCORD_WEBHOOK="<discord_webhook_url>" <path_of_check-dns.sh> "<domain_name>" >/dev/null 2>&1
+```
+
+### Website Monitoring Cron
+
+```bash!
+* * * * * MACHINE_NAME="<discord_bot_name>" DISCORD_WEBHOOK="<discord_webhook_url>" <path_of_check-website.sh> "<domain_name>" >/dev/null 2>&1
+```
